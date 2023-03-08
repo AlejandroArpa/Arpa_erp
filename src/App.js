@@ -50,7 +50,10 @@ function App() {
 
   return (
     <div className="App">
-      <Form frmVis={frmVis}>
+      <Form 
+        frmVis={frmVis}
+        toogleForm={toogleForm}
+      >
 
       </Form>
       <ProjectList className="prjList">
