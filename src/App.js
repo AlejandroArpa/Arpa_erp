@@ -1,65 +1,63 @@
 import './App.css';
-import CotizacionTarjeta from './CotizacionTarjeta';
-import CotizacionItem from './CotizacionItem';
-import AddCotizacionForm from './AddCotizacionForm';
-import CreateBtn from './CreateBtn';
 import { useState } from 'react';
+import ProjectList from './ProjectList';
+import ProjectItem from './ProjectItem';
 
-//Constantes de inicio
-  //cte cotizaciones por defecto
-const defCotizaciones =[
+
+const projects=[
   {
-    consecutivo:1000,
-    cliente:"Argos - Rio Claro",
-    Nombre:"Tornillo Sin fin molino",
-    logo:'/home/alejandro/Documentos/arpa_erp_v0/src/logoArgos.jpg'
+    project_title:"Titulo1",
+    creation_date:"01/01/2022",
+    last_update:"02/01/2022",
+    update_by:"Juan Perez"
   },
+
   {
-    consecutivo:1001,
-    cliente:"Mineros",
-    Nombre:"Brazo Draga",
+    project_title:"Titulo2",
+    creation_date:"03/01/2022",
+    last_update:"04/01/2022",
+    update_by:"Maria Perez"
   },
+
   {
-    consecutivo:1002,
-    cliente:"Argos - Tolcemento",
-    Nombre:"Repuesto",
+    project_title:"Titulo3",
+    creation_date:"05/01/2022",
+    last_update:"06/01/2022",
+    update_by:"Jose Hernandez"
   },
+
   {
-    consecutivo:1003,
-    cliente:"Cemex",
-    Nombre:"Tornillo Sin fin ",
-  },
-  {
-    consecutivo:1004,
-    cliente:"Danna",
-    Nombre:"Huellitas",
-  },
+    project_title:"Titulo4",
+    creation_date:"05/01/2022",
+    last_update:"06/01/2022",
+    update_by:"Jose Hernandez"
+  }
 ]
 
 
 function App() {
 
-const[flag,setFlag]=useState(false);
-
-const showhidde =()=>{
-  
-  let act =! flag;
-  setFlag(act);
-  console.log(flag);
-}
-
-const styles={
-  Add:{
-
-    // display:{ flag ? "flex" : "none"}
-  }
-
-}
 
 
   return (
     <div className="App">
-      
+      <ProjectList className="prjList">
+        {
+          projects.map((project,index)=>(
+            <ProjectItem 
+              prj_title={project.project_title}
+              prj_creation_date={project.creation_date}
+              prj_last_upd={project.last_update}
+              prj_upd_by={project.update_by}
+              key={project.project_title}
+              color={index%2===0 ? true : false}
+            />
+            
+          ))
+
+          
+        }
+      </ProjectList>
 
     </div>
   );
