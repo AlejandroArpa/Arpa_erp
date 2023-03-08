@@ -60,6 +60,14 @@ display: flex;
   margin-right: 30px;
 }
 
+.btn_edit:hover{
+  background-color: rgb(253, 189, 71);
+}
+
+.btn_open:hover{
+  background-color: rgb(71, 212, 71);
+}
+
 .btn:hover{
   cursor: pointer;
 }

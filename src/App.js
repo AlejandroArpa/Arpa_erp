@@ -2,6 +2,8 @@ import './App.css';
 import { useState } from 'react';
 import ProjectList from './ProjectList';
 import ProjectItem from './ProjectItem';
+import AddBtn from './AddBtn';
+import Form from './Form';
 
 
 const projects=[
@@ -36,11 +38,21 @@ const projects=[
 
 
 function App() {
-
+  const [frmVis,setFrmVis]=useState(false)
+  console.log(frmVis)
+  
+  const toogleForm = () => {
+    const newVis = !frmVis;
+    setFrmVis(newVis);
+    
+  }
 
 
   return (
     <div className="App">
+      <Form frmVis={frmVis}>
+
+      </Form>
       <ProjectList className="prjList">
         {
           projects.map((project,index)=>(
@@ -58,6 +70,7 @@ function App() {
           
         }
       </ProjectList>
+      <AddBtn toogleForm={toogleForm}/>
 
     </div>
   );
