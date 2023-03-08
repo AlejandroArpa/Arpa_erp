@@ -31,7 +31,7 @@ function Form({frmVis, toogleForm}) {
     <div className={frmVis ? "show shadow" : "hidde shadow" }>
       <form className={frmVis ? "show formu" : "hidde formu"} onSubmit={handleSubmit}>
         <div className='input-container'>
-          <input type="text" placeholder='Titulo proyecto' required onChange={getValue("in1")}/>
+          <input type="text" placeholder='Titulo proyecto' required onChange={getValue}/>
           <input type="text" placeholder='Edit by' required/>
         </div>
         <div className='date-container'>
